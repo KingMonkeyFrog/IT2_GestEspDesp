@@ -30,6 +30,7 @@ public class MenuFRC_UI
         {
             System.out.println("###### MENU #####\n\n");
             System.out.println("1. Registar Campanha");
+            System.out.println("2. Consultar Total de Reservas");
                        
             System.out.println("0. Voltar");
 
@@ -41,9 +42,13 @@ public class MenuFRC_UI
                 ui.run();
                 System.out.println("Selecinada a opção: Registar Campanha");
             }
+            else
+            if( opcao.equals("2") )
+            {
+                ConsultarTotalReservas_UI ui = new ConsultarTotalReservas_UI(ged);
+                ui.run();
+            }
 
-            // Incluir as restantes opções aqui
-            
         }
         while (!opcao.equals("0") );
     }
