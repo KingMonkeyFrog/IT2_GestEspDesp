@@ -373,6 +373,52 @@ public class PlataformaGED
             }
             return null;
         }
+
+        public List<Modalidade> getModalidades() {
+            return lstModalidades;
+        }
+
+        public List<Recinto> obterRecintosBySiglaModalidade(String sigla) {
+            List<Recinto> recintosM = obterListaRecintos();
+            List<Recinto> newRecintos = new ArrayList<>();
+            for(Recinto r : recintosM){
+                if(r.containsModalidade(sigla)){
+                    newRecintos.add(r);
+                }
+
+            }   
+
+            return newRecintos;
+        }
+
+
+        public List<TimeSlot> obterReservasByEstado(int e) {
+            List<TimeSlot> timeSlots = new ArrayList<>();
+            for(Recinto r : lstRecintos){
+                for(TimeSlot t : r.getListaTimeSlots()){
+                    if(t.getEstado() == e){
+                        timeSlots.add(t);
+                    }
+                }
+            }
+            return timeSlots;
+
+            
+        }
+
+        public List<TimeSlot> obterTotalReservas(int i, int o) {
+            List<TimeSlot> ts = new ArrayList<>();
+            for(Recinto r : lstRecintos){
+                for(TimeSlot t : r.getListaTimeSlots()){
+                    if(t.isInDate(i, o)){
+                        ts.add(t);
+                    }
+                }
+            }	
+            return ts;
+        }
+        
+
 }
 
 

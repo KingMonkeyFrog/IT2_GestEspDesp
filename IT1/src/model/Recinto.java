@@ -160,4 +160,7 @@ public class Recinto {
     public Calendario1 oberCalendario() {
         return this.calendario;
     }
+    public List<TimeSlot> getListaTimeSlots() {
+        return this.calendario.getTimeSlots();
+    }
 }

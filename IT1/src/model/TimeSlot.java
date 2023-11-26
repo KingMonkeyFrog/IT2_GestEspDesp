@@ -40,6 +40,16 @@ this.horaFim = 0;
     }
 
 public void setCusto(double d) {
-    this.custo=(int) d;
+    this.custo= (int) d;
 }
+
+public int getEstado() {
+    return estado;
+    
+}
+
+public boolean isInDate(int i, int o) {
+    return (this.dia >= i && this.dia <= o);
+}
+
 }

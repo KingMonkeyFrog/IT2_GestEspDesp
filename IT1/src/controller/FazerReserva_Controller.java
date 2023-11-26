@@ -7,6 +7,7 @@ import model.Cliente;
 import model.Modalidade;
 import model.PlataformaGED;
 import model.Recinto;
+import model.TimeSlot;
 
 public class FazerReserva_Controller {
     private PlataformaGED ged;
@@ -57,4 +58,7 @@ public class FazerReserva_Controller {
     public Modalidade obtemModalidadeBySigla(String codRef2) {
         return ged.obterModalidadeBySigla(codRef2);
     }
+
+
+ 
 }

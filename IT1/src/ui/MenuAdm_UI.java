@@ -25,6 +25,7 @@ public class MenuAdm_UI
             System.out.println("1. Especificar Modalidade");
             System.out.println("2. Especificar Espaço Aquático");
             System.out.println("3. Especificar Espaço Não Aquático");
+            System.out.println("4. Consultar o Total de Reservas");
             System.out.println("0. Voltar");
             opcao = Utils.readLineFromConsole("Introduza opção: ");
  
@@ -43,6 +44,12 @@ public class MenuAdm_UI
             if( opcao.equals("3") )
             {
                 EspacoNaoAquatico_UI ui = new EspacoNaoAquatico_UI(ged);
+                ui.run();
+            }
+            else
+            if( opcao.equals("4") )
+            {
+                ConsultarTotalReservas_UI ui = new ConsultarTotalReservas_UI(ged);
                 ui.run();
             }
 
