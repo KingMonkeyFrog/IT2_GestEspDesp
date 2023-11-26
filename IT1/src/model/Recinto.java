@@ -10,6 +10,7 @@ public class Recinto {
     private String dimensao;
     private Espaco espaco;
     private List<Modalidade> modalidades;
+    private Calendario1 calendario;
 
     public Recinto(int codigo, String endereco, String contacto, String dimensao, Espaco espaco) {
         this.codigo = codigo;
@@ -18,6 +19,20 @@ public class Recinto {
         this.dimensao = dimensao;
         this.espaco= espaco;
         this.modalidades = new ArrayList<>();
+        this.calendario = new Calendario1(this);
+
+        
+        
+    }
+     public Recinto(int codigo, String endereco, String contacto, String dimensao, Espaco espaco, Calendario1 calendario) {
+        this.codigo = codigo;
+        this.endereco = endereco;
+        this.contacto = contacto;
+        this.dimensao = dimensao;
+        this.espaco= espaco;
+        this.modalidades = new ArrayList<>();
+        this.calendario = calendario;
+
         
         
     }
@@ -29,6 +44,7 @@ public class Recinto {
         this.dimensao = "";
         this.espaco = null;
         this.modalidades = new ArrayList<>();
+        this.calendario = new Calendario1(this);
     }
         
 
@@ -108,5 +124,40 @@ public class Recinto {
                 ", espaco=" + espaco +
                 ", modalidades=" + modalidades +
                 '}';
+    }
+
+    public String obterListaModalidadeDoRecinto() {
+        StringBuilder sb = new StringBuilder();
+        for (Modalidade m : modalidades) {
+            sb.append(m.toString());
+        }
+        return sb.toString();
+    }
+
+    public Modalidade obterModalidadeByID(String i) {
+        for (Modalidade m : modalidades) {
+            if (m.getSiglaModalidade() == i) {
+                return m;
+            }
+        }
+        return null;
+        
+}
+    public String obterListaCalendario() {
+        return this.calendario.toString();
+    }
+    public void adicionarTimeSlot(int codigo, int dia, int duracao, int custo, int estado, int horaInic, int horaFim, Modalidade modalidade) {
+                this.calendario.registaHorasCalendario(codigo, dia, duracao, custo, estado, horaInic, horaFim, modalidade);
+    }
+    public boolean containsModalidade(String sigla) {
+        for(Modalidade m : modalidades){
+            if(m.getSiglaModalidade().equals(sigla)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public Calendario1 oberCalendario() {
+        return this.calendario;
     }
 }

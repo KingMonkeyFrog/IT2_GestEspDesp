@@ -43,9 +43,9 @@ public class MenuFRR_UI
             else
             if( opcao.equals("2") )
             {
-                RegistarProprietario_UI ui = new RegistarProprietario_UI(ged);
+                AdicionarModalidadeRecinto_UI ui = new AdicionarModalidadeRecinto_UI(ged);
                 ui.run();
-                System.out.println("Selecinada a opção: Registar Proprietário");   
+                System.out.println("Selecinada a opção:Adicionar Modalidade a Recinto");   
             }
            
             

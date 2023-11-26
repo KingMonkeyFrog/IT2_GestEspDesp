@@ -54,23 +54,14 @@ public class Recinto_UI {
         String endereco = Utils.readLineFromConsole("Qual o endereco do Recinto : ");
         String contacto = Utils.readLineFromConsole("Qual o contacto do Recinto : ");
         String dimensao = Utils.readLineFromConsole("Qual o dimensao do Recinto : ");
-        System.out.println(Qual o tipo de Espaço: Escreva (S) para Espaço Aquatico e (N) para Espaço Nao Aquatico );
-        if(S){
-            
-        
-        }
-        
-         while(Utils.readLineFromConsole("Quer adicionar algum Espaco (S/N): ").equals("S")){
-       
-        Espaco_UI espaco = new Espaco_UI(ged);
-        vecE.add(espaco.run());}
-        
-        controller.setDados(codigo, endereco, contacto, dimensao);
-        controller.setEspaco(vecE);
-}
-        
+    
+        Espaco_UI espui = new Espaco_UI(ged);
+        Espaco espaco = espui.run();
 
-   
+        controller.setDados(codigo, endereco, contacto, dimensao,espaco);
+        
+    }
+
     private void apresentaDados() 
     {
         System.out.println("\nRecinto:\n" + controller.getRecintoAsString());

@@ -27,11 +27,12 @@ public class Recinto_Controller {
         this.r = ged.novoRecinto();
     }
     
-    public void setDados(int codigo, String endereco, String contacto, String dimensao) {
+    public void setDados(int codigo, String endereco, String contacto, String dimensao, Espaco espaco) {
         this.r.setCodigo(codigo);
         this.r.setEndereco(endereco);
         this.r.setEndereco(contacto);
-        this.r.setDimensao(dimensao);   
+        this.r.setDimensao(dimensao); 
+        this.r.setEspaco(espaco);     
     }
 
 
@@ -56,7 +57,7 @@ public class Recinto_Controller {
     
         public boolean registarRecinto()
     {
-        return this.ged.registaRecinto(r);
+        return this.ged.registarRecinto(r);
     }
         
             public String getRecintoAsString()
@@ -72,8 +73,8 @@ public class Recinto_Controller {
     public void setR(Recinto r) {
         this.r = r;
     }
-    public void setEspaco(List<Espaco> vecE){
-        this.r.setEspacos(vecE);
+    public void setEspaco(Espaco espaco){
+        this.r.setEspaco(espaco);
     }
     }       
  

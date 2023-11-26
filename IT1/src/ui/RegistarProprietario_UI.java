@@ -30,7 +30,7 @@ public class RegistarProprietario_UI
 
     public void run()
     {
-        System.out.println("\nNova Proprietario:");
+        System.out.println("\nNovo Proprietario:");
         controller.novoProprietario();
 
         introduzDados();
@@ -48,24 +48,30 @@ public class RegistarProprietario_UI
     }
     
     private void introduzDados() {
+
         int codigo = Utils.IntFromConsole("Introduza o codigo do Proprietario: ");
         String nif = Utils.readLineFromConsole("Introduza o nif do Proprietario: ");
         String email = Utils.readLineFromConsole("Introduza o email do Proprietario: ");
         String contacto = Utils.readLineFromConsole("Introduza contacto do Proprietario: ");
         String pagWeb = Utils.readLineFromConsole("Introduza a pagWeb do Proprietario: ");
-         List<Recinto> vecR=new ArrayList<Recinto>();
-         while(Utils.readLineFromConsole("Quer adicionar algum recinto (S/N): ").equals("S")){
+        List<Recinto> vecR=new ArrayList<Recinto>();
+        
+       
+
+        while(Utils.readLineFromConsole("Quer adicionar algum recinto (S/N): ").equalsIgnoreCase("S")){
        
         Recinto_UI recinto = new Recinto_UI(ged);
-        vecR.add(recinto.run());}
+        vecR.add(recinto.run());
+
+        controller.setDados(codigo, nif, email,contacto,pagWeb, vecR);
+        controller.registaProprietario();
         
-        controller.setDados(codigo, nif, email,contacto,pagWeb);
-        controller.setRecinto(vecR);
+        }
     }
     
     private void apresentaDados() 
     {
-        System.out.println("\nProprietario:\n" + controller.getProprietarioAsString());
+        System.out.println("\nProprietario:\n" + controller.obterListaProprietariosASString());
     }
  
 }

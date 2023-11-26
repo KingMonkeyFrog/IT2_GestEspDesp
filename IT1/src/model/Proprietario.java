@@ -128,7 +128,7 @@ public class Proprietario {
     
     StringBuilder sb = new StringBuilder();
     for (Recinto r : recintos) {
-        sb.append(recintos.toString()).append("\n");
+        sb.append(r.toString()).append("\n");
     }    
         
         return  "Proprietario{" +
@@ -143,4 +143,14 @@ public class Proprietario {
     public void setRecinto(List<Recinto> vecR) {
         this.recintos=vecR;
     }
+
+    public String obterListaRecintoDeProprietario() {
+        return recintos.toString();
+    }
+
+    public Recinto obterRecintoByID(int codRef) {
+        return recintos.get(codRef);
+    }
+
+  
 }

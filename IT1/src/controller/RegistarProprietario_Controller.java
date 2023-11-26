@@ -29,12 +29,13 @@ public class RegistarProprietario_Controller
     {
         this.proprietario = ged.novoProprietario();
     }
-    public void setDados(int codigoUnico, String nif, String email, String contacto, String paginaWeb) {
+    public void setDados(int codigoUnico, String nif, String email, String contacto, String paginaWeb, List<Recinto> vecR) {
         this.proprietario.setCodigoUnico(codigoUnico);
         this.proprietario.setNif(nif);
         this.proprietario.setEmail(email);
         this.proprietario.setContacto(contacto);
         this.proprietario.setPaginaWeb(paginaWeb);
+        this.proprietario.setRecinto(vecR);
     }
     
     public int getCodigo()
@@ -54,5 +55,8 @@ public class RegistarProprietario_Controller
 
     public void setRecinto(List<Recinto> vecR) {
          this.proprietario.setRecinto(vecR);
+    }
+    public String obterListaProprietariosASString() {
+       return ged.obterListaProprietariosAsString();
     }
 }

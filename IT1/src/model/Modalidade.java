@@ -11,11 +11,13 @@ package model;
  * @author Dulce Mota <mdm@isep.ipp.pt>
  */
 public class Modalidade
-{
+{   
     private String sigla;
     private String design;
     private int nrParticipantes;
-    
+    private int preco;
+   
+  
     
     
     private static final String STRING_POR_OMISSAO = "a definir";
@@ -26,6 +28,7 @@ public class Modalidade
         this.setSiglaModalidade(STRING_POR_OMISSAO);
         this.setDesign(STRING_POR_OMISSAO);
         this.setNrParticipantes(INT_POR_OMISSAO);
+        this.preco = INT_POR_OMISSAO;
         
     }
     public Modalidade(String sigla, String design, int nrParticipantes)
@@ -33,6 +36,14 @@ public class Modalidade
         this.setSiglaModalidade(sigla);
         this.setDesign(design);
         this.setNrParticipantes(nrParticipantes);
+        this.preco = INT_POR_OMISSAO;
+    }
+    public Modalidade(String sigla, String design, int nrParticipantes,int preco)
+    {
+        this.setSiglaModalidade(sigla);
+        this.setDesign(design);
+        this.setNrParticipantes(nrParticipantes);
+        this.preco = preco;
     }
     public final void setSiglaModalidade(String sigla)
     {
@@ -63,4 +74,14 @@ public class Modalidade
         sb.append("Número de participantes: "+nrParticipantes+"\n");
         return sb.toString();
     }
+      public int getPreco() {
+        return preco;
+    }
+
+    public void setPreco(int preco) {
+        this.preco = preco;
+    }
+
+
+
 }

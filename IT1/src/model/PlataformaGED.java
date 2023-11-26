@@ -20,6 +20,8 @@ public class PlataformaGED
     private final List<Espaco> lstEspacos;
     private final List<Proprietario> lstProprietarios;
     private final List<Campanha> lstCampanhas;
+    private final List<Recinto> lstRecintos;
+    private final List<Cliente> lstClientes;
     
     
     public PlataformaGED(String nome)
@@ -29,6 +31,8 @@ public class PlataformaGED
         this.lstEspacos = new ArrayList<>();
         this.lstProprietarios= new ArrayList<>();
         this.lstCampanhas= new ArrayList<>();
+        this.lstRecintos= new ArrayList<>();
+        this.lstClientes= new ArrayList<>();
             }
     
     public final void setNome(String nome)
@@ -200,6 +204,10 @@ public class PlataformaGED
         }
         return resp;
     }
+
+    public String obterListaProprietariosAsString() {
+        return this.lstProprietarios.toString();
+    }
         
         
         
@@ -239,12 +247,134 @@ public class PlataformaGED
     }
        
 
+        public Recinto novoRecinto()
+    {
+            return new Recinto() {};
+        
+    }
+        
+        public boolean registarRecinto(Recinto r)
+    {
+        if (this.valida(r))
+        {
+           adicionarRecinto(r);
+           return true;
+        }
+        return false;
+    }
+        
+    private void adicionarRecinto(Recinto r){
+        lstRecintos.add(r);
+    }
+    
+        public boolean valida(Recinto r)
+    {
+        boolean resp = false;
+        if (r.valida())
+        {
+           // Escrever aqui o código de validação
+        
+           //
+           resp = true; 
+        }
+        return resp;
+    }
+
+    public Cliente novoCliente() {
+        return new Cliente() {};
+    }
+    
+    public boolean registarCliente(Cliente c) {
+        if (this.valida(c)) {
+            adicionarCliente(c);
+            return true;
+        }
+        return false;
+    }
+    
+    private void adicionarCliente(Cliente c) {
+        lstClientes.add(c);
+    }
+    
+    public boolean valida(Cliente c) {
+        boolean resp = false;
+        if (c.valida()) {
+            // Escrever aqui o código de validação
+    
+            //
+            resp = true; 
+        }
+        return resp;
+    }
+
+
+
+
+
+
+
+
+    
+
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("Nome da empresa: "+nome+"\n");
         sb.append("Lista das modalidades: "+lstModalidades.toString()+"\n");
         return sb.toString();
     }
+
+    public Proprietario obterProprietarioByID(int codRef) {
+        return lstProprietarios.get(codRef);
+    }
+
+    public Modalidade obterModalidadeByID(int codRef) {
+        return lstModalidades.get(codRef);
+    }
+
+    public String obterModalidesAsString() {
+        return lstModalidades.toString();
+    }
+
+    public List<Recinto> obterListaRecintos() {
+        return lstRecintos;
+    }
+
+        public List<Proprietario> obterListaProprietarios() {
+        return lstProprietarios;
+    }
+
+
+        public Recinto obterRecintoBySiglaModalidade(String sigla) {
+            List<Recinto> newRecintos = obterListaRecintos();
+            for(Recinto r : lstRecintos){
+                if(r.containsModalidade(sigla)){
+                    newRecintos.add(r);
+                }
+            
+            }   
+
+            return null;
+        }
+
+        public List<Cliente> getListaClientes() {
+            return lstClientes;
+        }
+
+        public Recinto obterRecintoByID(int codRef1) {
+            return lstRecintos.get(codRef1);
+        }
+
+        public Modalidade obterModalidadeBySigla(String codRef2) {
+            for(Modalidade m  : lstModalidades){
+                if(m.getSiglaModalidade().equals(codRef2)){
+                    return m;
+                }
+                
+            }
+            return null;
+        }
 }
+
+
     
     

@@ -63,7 +63,7 @@ public class Cliente
         
         this.setNome(STRING_POR_OMISSAO);
         this.setEndereco(STRING_POR_OMISSAO);
-        this.setDataNasc(new Data());
+        this.dataNasc = new Data();
         this.setEmail(STRING_POR_OMISSAO);
         this.setNif(STRING_POR_OMISSAO);
         this.setContacto(STRING_POR_OMISSAO);
@@ -86,7 +86,7 @@ public class Cliente
         
         this.setNome(nome);
         this.setEndereco(endereco);
-        this.setDataNasc(dataNasc);
+        this.dataNasc = dataNasc;
         this.setEmail(email);
         this.setNif(nif);
         this.setContacto(contacto);
@@ -140,11 +140,10 @@ public class Cliente
     /**
      * Define a data de nascimento do cliente.
      * 
-     * @param dataNasc data de nascimento do cliente.
+     * @param dataNasc2 data de nascimento do cliente.
      */
-    public void setDataNasc(Data dataNasc) {
-        this.dataNasc = dataNasc;
-    }
+    public void setDataNasc(Data dataNasc2) {
+        this.dataNasc = dataNasc2;}
 
     /**
      * Obtém o código do cliente.
@@ -203,5 +202,34 @@ public class Cliente
         sb.append("Email: "+email+"\n");
         return sb.toString();
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public Data getDataNasc() {
+        return dataNasc;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNif() {
+        return nif;
+    }
+
+    public String getContacto() {
+        return contacto;
+    }
+
+    public static int getCont() {
+        return cont;
+    }
+
 }
 
