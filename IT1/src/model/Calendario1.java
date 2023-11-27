@@ -13,18 +13,24 @@ import utils.Data;
  */
 public class Calendario1
 {
-    Recinto recinto;
+
     List<TimeSlot> timeSlots;
    
-    public Calendario1(Recinto recinto){
-        this.recinto = recinto;
-        this.timeSlots = new ArrayList<>();
+    public Calendario1(List<TimeSlot> timeSlots){
+    
+        this.timeSlots = timeSlots;
     }
 
 
-    public Recinto getRecinto() {
-        return recinto;
+
+    
+
+    public Calendario1() {
     }
+
+
+
+
 
     /**
      * Obtém os slots de tempo do calendário.

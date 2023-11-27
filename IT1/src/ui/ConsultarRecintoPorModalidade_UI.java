@@ -35,7 +35,7 @@ public class ConsultarRecintoPorModalidade_UI
 
         System.out.println(controller.getModaliades().toString());
         String s = Utils.readLineFromConsole("Introduza a Sigla da Modalidade que quer: ");
-
+        System.out.println(s);
         System.out.println(controller.getRecintosPorModalidade(s).toString());
         int r = Utils.IntFromConsole("Introduza o codigo do recinto que quer: ");
         System.out.println(controller.getRecintosPorModalidade(s).get(r).toString());

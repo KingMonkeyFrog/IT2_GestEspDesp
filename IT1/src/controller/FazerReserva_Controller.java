@@ -28,8 +28,8 @@ public class FazerReserva_Controller {
         return ged.obterModalidesAsString();
     }
 
-    public Recinto obterRecintoBySiglaModalidade(String codRef) {
-        return ged.obterRecintoBySiglaModalidade(codRef);
+    public List<Recinto> obterRecintosBySiglaModalidade(String codRef) {
+        return ged.obterRecintosBySiglaModalidade(codRef);
     }
 
  

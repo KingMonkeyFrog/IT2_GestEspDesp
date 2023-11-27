@@ -19,7 +19,7 @@ public class Recinto {
         this.dimensao = dimensao;
         this.espaco= espaco;
         this.modalidades = new ArrayList<>();
-        this.calendario = new Calendario1(this);
+        this.calendario = new Calendario1();
 
         
         
@@ -36,6 +36,18 @@ public class Recinto {
         
         
     }
+    public Recinto(int codigo, String endereco, String contacto, String dimensao, Espaco espaco, Calendario1 calendario,List<Modalidade> modalidades) {
+        this.codigo = codigo;
+        this.endereco = endereco;
+        this.contacto = contacto;
+        this.dimensao = dimensao;
+        this.espaco= espaco;
+        this.modalidades = modalidades;
+        this.calendario = calendario;
+
+        
+        
+    }
     
         public Recinto() {
         this.codigo = 0;
@@ -44,7 +56,7 @@ public class Recinto {
         this.dimensao = "";
         this.espaco = null;
         this.modalidades = new ArrayList<>();
-        this.calendario = new Calendario1(this);
+        this.calendario = new Calendario1();
     }
         
 

@@ -33,10 +33,13 @@ public class ConsultarTotalReservas_UI
     private void introduzDados() {
         int  i = Utils.IntFromConsole("Qual o Primeiro dia com Reservas: ");
         int o = Utils.IntFromConsole("Qual o Ultimo dia com Reservas: ");
-        System.out.println(controller.obterTotalReservas(i, o).toString());
+        System.out.println(controller.obterTotalReservas(i, o).size());
 
 
     }
+
+
+
     
  
 }

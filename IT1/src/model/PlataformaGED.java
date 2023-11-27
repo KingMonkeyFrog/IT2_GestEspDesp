@@ -263,7 +263,7 @@ public class PlataformaGED
         return false;
     }
         
-    private void adicionarRecinto(Recinto r){
+    public void adicionarRecinto(Recinto r){
         lstRecintos.add(r);
     }
     
@@ -292,7 +292,7 @@ public class PlataformaGED
         return false;
     }
     
-    private void adicionarCliente(Cliente c) {
+    public void adicionarCliente(Cliente c) {
         lstClientes.add(c);
     }
     
@@ -344,17 +344,7 @@ public class PlataformaGED
     }
 
 
-        public Recinto obterRecintoBySiglaModalidade(String sigla) {
-            List<Recinto> newRecintos = obterListaRecintos();
-            for(Recinto r : lstRecintos){
-                if(r.containsModalidade(sigla)){
-                    newRecintos.add(r);
-                }
-            
-            }   
 
-            return null;
-        }
 
         public List<Cliente> getListaClientes() {
             return lstClientes;
@@ -379,7 +369,7 @@ public class PlataformaGED
         }
 
         public List<Recinto> obterRecintosBySiglaModalidade(String sigla) {
-            List<Recinto> recintosM = obterListaRecintos();
+            List<Recinto> recintosM = lstRecintos;
             List<Recinto> newRecintos = new ArrayList<>();
             for(Recinto r : recintosM){
                 if(r.containsModalidade(sigla)){
@@ -408,16 +398,24 @@ public class PlataformaGED
 
         public List<TimeSlot> obterTotalReservas(int i, int o) {
             List<TimeSlot> ts = new ArrayList<>();
+            System.out.println(lstRecintos.size());
             for(Recinto r : lstRecintos){
+                System.out.println(r.getListaTimeSlots());
                 for(TimeSlot t : r.getListaTimeSlots()){
                     if(t.isInDate(i, o)){
                         ts.add(t);
+                        
                     }
                 }
             }	
             return ts;
         }
-        
+
+        public void setModalidades(List<Modalidade> modalidades) {
+            this.lstModalidades.addAll(modalidades);
+        }
+
+
 
 }
 

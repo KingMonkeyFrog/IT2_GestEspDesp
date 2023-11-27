@@ -23,7 +23,7 @@ public class ConsultarReservaEstado_UI
 
     public void run()
     {
-        System.out.println("\n Consultar Recinto por Modalidade:");
+        System.out.println("\n Consultar Reserva por Estado:");
         
         introduzDados();
 

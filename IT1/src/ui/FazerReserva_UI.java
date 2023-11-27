@@ -47,7 +47,7 @@ public class FazerReserva_UI
          String codRef2 = Utils.readLineFromConsole("Qual a Sigla da modalidade que prentende reservar");
 
 
-        System.out.println(controller.obterRecintoBySiglaModalidade(codRef2));
+        System.out.println(controller.obterRecintosBySiglaModalidade(codRef2));
 
        
         int codRef1 = Utils.IntFromConsole("Qual o codigo do Recinto que deseja reservar");

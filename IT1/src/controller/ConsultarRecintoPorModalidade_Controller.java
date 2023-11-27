@@ -23,10 +23,13 @@ public class ConsultarRecintoPorModalidade_Controller
 
         this.ged = ged;
     }
+
+
     public List<Modalidade> getModaliades()
     {
         return ged.getModalidades();
     }
+    
     public List<Recinto> getRecintosPorModalidade(String sigla)
     {
         return ged.obterRecintosBySiglaModalidade(sigla);
